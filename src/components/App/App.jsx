@@ -5,7 +5,7 @@ import GalleryList from '../GalleryList/GalleryList';
 
 function App() {
 
-  let [galleryItems, setGalleryItems] = useState([]);
+  let [galleryList, setGalleryList] = useState([]);
 
   useEffect(() => {
     console.log('useEffect - page load');
@@ -17,7 +17,7 @@ function App() {
       method: 'GET',
       url: '/gallery',
     }).then(response => {
-      setGalleryItems(response.data);
+      setGalleryList(response.data);
       console.log(response.data);
     }).catch(error => {
       console.log(error);
@@ -32,15 +32,10 @@ function App() {
         <h1 className="App-title">Gallery of My Photos</h1>
       </header>
       <div>
-        <GalleryList />
-      </div>
+        <GalleryList galleryList={galleryList}/>
+        </div>
 
-      <div>{galleryItems.map(picture => {
-
-        return <div key={picture.id} picutre={picture} />
-
-
-      })}</div>
+   
 
 
 

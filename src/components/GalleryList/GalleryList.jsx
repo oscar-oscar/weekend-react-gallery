@@ -1,18 +1,18 @@
 import { useState } from 'react';
-
-function GalleryList({picture}) {
-
-    return <div>
-        <img src="images/atttower.jpg" />
-        <img src="images/bridge.jpg" />
-        <img src="images/chiles.jpg" />
-        <img src="images/clouds.jpg" />
-        <img src="images/foshay1.jpg" />
-        <img src="images/guthrie.jpg" />
-        <img src="images/guthrie2.jpg" />
-        <img src="images/uniondepot.jpg" />
-        <img src="images/weisman.jpg" />
-    </div>
+//like counnt and delete will go in here too
+function GalleryList({ galleryList }) {
+    return (
+        <div>
+            <ul>
+                {galleryList.map(picture => (
+                    <li key={picture.id}>
+                        <img src={picture.path} />
+                        {picture.likes}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 }
 
 export default GalleryList;
