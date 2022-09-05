@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
+import GalleryItem from '../GalleryItem/GalleryItem';
 
 function App() {
 
   let [galleryList, setGalleryList] = useState([]);
+ 
+
 
   useEffect(() => {
     console.log('useEffect - page load');
@@ -26,20 +29,17 @@ function App() {
   }
 
 
+
+
   return (
     <div className="App">
       <header className="App-header">
         <h1 className="App-title">Gallery of My Photos</h1>
       </header>
       <div>
-        <GalleryList galleryList={galleryList}/>
-        </div>
-
-   
-
-
-
-
+        <GalleryList galleryList={galleryList} />
+        {/* <GalleryItem/> */}
+      </div>
     </div>
   );
 }

@@ -1,27 +1,40 @@
-// import {useState} from 'react';
-// import GalleryItem from '../../../server/modules/gallery.data';
-
-// function GalleryItem(picture){
-//     return
-// }
+import React, { useState, useEffect } from 'react';
+import GalleryList from '../GalleryList/GalleryList';
 
 
 
-// const [toggle, setToggle] = useState(false);
 
-//     const displayDescription = () => {
-//         if(toggle === true){
-//             return <div>{picture.description}</div>
-//         // } else{
-//         //     return <div></div>
-//         }
-//     }
+function GalleryItem({ picture }) {
+    const [toggle, setToggle] = useState(false);
 
-//     return <li>{picture.id} testing location {
-//        toggle ? ( <div>{picture.description}</div>
-//        ): (
-//         <div>????</div>
-//        )
-//     }
-//     <button onClick={() => setToggle(!toggle)}>{toggle ? 'hide' : 'show'}</button>
-//     </li>
+    return (
+        <div>
+            <li key={picture.id}>
+                    {<img src={picture.path} />}
+                    {picture.description} <br/>
+                    likes: {picture.likes}
+                    </li>
+        </div>
+    )
+   
+
+    // return <div>{picture.id} {
+    //     toggle ? (
+
+    //         <div>{picture.descprtion}</div>
+    //     ) : (
+
+    //         <div><img src={picture.path}/></div>
+    //     )
+    // }
+
+    //     <button onClick={() => setToggle(!toggle)}>{toggle ? 'Hide' : 'Show'}</button>
+
+    //     </div>
+
+}
+
+export default GalleryItem;
+
+
+
