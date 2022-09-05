@@ -38,10 +38,10 @@ function App() {
       </header>
       <div>
         <GalleryList galleryList={galleryList} />
-        {/* <GalleryItem/> */}
+        
       </div>
     </div>
   );
-};
+}
 
 export default App;

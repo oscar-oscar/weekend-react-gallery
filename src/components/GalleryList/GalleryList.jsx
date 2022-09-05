@@ -16,8 +16,17 @@ function GalleryList({galleryList}) {
             </ul>
         </div>
     )
+
 }  
 
+// function updateLike(){
+//     const [likeCounter, setLikeCounter] = useState(0);
+
+//     const increase = () => {
+//         setLikeCounter(likeCounter => +1);
+//     }
+//     return <button onClick={increase}>Like</button>
+// }
         
     
     
