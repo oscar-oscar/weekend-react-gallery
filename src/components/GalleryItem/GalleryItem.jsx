@@ -7,34 +7,20 @@ import GalleryList from '../GalleryList/GalleryList';
 function GalleryItem({ picture }) {
     const [toggle, setToggle] = useState(false);
 
-    return (
-        <div>
-            <li key={picture.id}>
-                    {<img src={picture.path} />}
-                    {picture.description} <br/>
-                    likes: {picture.likes}
-                    </li>
-        </div>
-    )
-   
+    return <li key={picture.id}> {
+        toggle ? (
+            <div>{<img src={picture.path} />}</div>
+        ) : (
+            <div>{picture.description}</div>
+        )
+    }
+    <button onClick={() => setToggle(!toggle)}>{toggle ? 'Hide' : 'Show'}</button>
+    </li>
 
-    // return <div>{picture.id} {
-    //     toggle ? (
 
-    //         <div>{picture.descprtion}</div>
-    //     ) : (
-
-    //         <div><img src={picture.path}/></div>
-    //     )
-    // }
-
-    //     <button onClick={() => setToggle(!toggle)}>{toggle ? 'Hide' : 'Show'}</button>
-
-    //     </div>
 
 }
 
 export default GalleryItem;
-
 
 
