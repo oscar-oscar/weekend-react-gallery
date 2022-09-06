@@ -11,43 +11,43 @@ import Box, { BoxProps } from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import Stack from '@mui/material/Stack';
+import './GalleryItem.css';
+import axiox from 'axios';
 
 
-function GalleryItem({ picture, updateLike }) {
+
+
+function GalleryItem({ picture, likePhoto }) {
     const [toggle, setToggle] = useState(false);
     const [likeCounter, setLikeCounter] = useState(0);
 
+   
 
     return <Box sx={{ flexGrow: 1 }}>
-        {/* <Grid container space={2}> */}
 
-            <Grid xs={12} sm={4} key={picture.id}>
+        <Grid xs={12} sm={4} key={picture.id}>
 
-                <Card sx={{ backgroundColor: "#D2F8E7 " }} elevation={3}>
-                   
+            <Card sx={{ backgroundColor: "#fffde7" }} elevation={3}>
+                <CardContent>
+                    {
+                        toggle ? (
+                            <Typography align="center" variant="h5"><div className='description'>{<img style={{ width: 1000 + 'px' }} src={picture.path} />}{picture.description} </div></Typography>
+                        ) : (
+                            <div className='pic-container'>{<img style={{ width: 1000 + 'px' }}src={picture.path} />}</div>
+                        )
+                    }
+                    <CardActions>
+                        <Button onClick={() => setToggle(!toggle)}>{toggle ? 'See Photo' : 'See Info'}</Button>
+                        <Stack direction="row" spacing={2}><Button color="primary" variant="contained" startIcon={<ThumbUpIcon />}
+                            onClick={() => setLikeCounter(likeCounter + 1)}>{likeCounter}</Button></Stack>
+                            <button onClick={() => likePhoto(picture.id)}>Like{picture.likes}</button>
+                    </CardActions>
+                </CardContent>
+            </Card>
 
-                    <CardContent>
-                        {
-                            toggle ? (
-                                <Typography variant="h5"><div>{picture.description}</div></Typography>
-                            ) : (
-                                <div>{<img src={picture.path} />}</div>
-                            )
-                        }
-                        <CardActions>
-                            <Button onClick={() => setToggle(!toggle)}>{toggle ? 'See Photo' : 'See Info'}</Button>
+        </Grid>
 
-                            <Stack direction="row" spacing={2}><Button variant="contained" startIcon={<ThumbUpIcon/>} onClick={() => setLikeCounter(likeCounter + 1)}>{likeCounter}</Button></Stack>
-                            
-                            
-       
-                        </CardActions>
-                    </CardContent>
-                </Card>
-
-            </Grid>
-
-        {/* </Grid> */}
+      
     </Box>
 
 }
