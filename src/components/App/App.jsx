@@ -5,8 +5,8 @@ import GalleryList from '../GalleryList/GalleryList';
 import GalleryItem from '../GalleryItem/GalleryItem';
 
 function App() {
-  
-let [galleryList, setGalleryList] = useState([]);
+
+  let [galleryList, setGalleryList] = useState([]);
 
 
 
@@ -32,16 +32,16 @@ let [galleryList, setGalleryList] = useState([]);
   const likePhoto = (galleryId) => {
     console.log('galleryId', galleryId);
     axios({
-        method: 'PUT',
-        url: `/gallery/like/${galleryId}`
+      method: 'PUT',
+      url: `/gallery/like/${galleryId}`
     }).then(response => {
-        console.log('made it here!')
-        fetchPictures();
+      console.log('made it here!')
+      fetchPictures();
     }).catch(error => {
-        console.log(error);
-        alert('something went wrong in PUT');
+      console.log(error);
+      alert('something went wrong in PUT');
     });
-};
+  };
 
   return (
     <div className="App">
@@ -49,8 +49,8 @@ let [galleryList, setGalleryList] = useState([]);
         <h1 className="App-title">Gallery of My Photos</h1>
       </header>
       <div>
-        <GalleryList galleryList={galleryList} likePhoto={likePhoto}/>
-        
+        <GalleryList galleryList={galleryList} likePhoto={likePhoto} />
+
       </div>
     </div>
   );

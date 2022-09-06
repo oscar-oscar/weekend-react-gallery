@@ -31,16 +31,16 @@ function GalleryItem({ picture, likePhoto }) {
                 <CardContent>
                     {
                         toggle ? (
-                            <Typography align="center" variant="h5"><div className='description'>{<img style={{ width: 1000 + 'px' }} src={picture.path} />}{picture.description} </div></Typography>
+                            <Typography align="center" variant="h6"><div className='description'>{<img src={picture.path} />}{picture.description} </div></Typography>
                         ) : (
-                            <div className='pic-container'>{<img style={{ width: 1000 + 'px' }}src={picture.path} />}</div>
+                            <div className='pic-container'>{<img src={picture.path} />}</div>
                         )
                     }
                     <CardActions>
                         <Button onClick={() => setToggle(!toggle)}>{toggle ? 'See Photo' : 'See Info'}</Button>
                         <Stack direction="row" spacing={2}><Button color="primary" variant="contained" startIcon={<ThumbUpIcon />}
-                            onClick={() => setLikeCounter(likeCounter + 1)}>{likeCounter}</Button></Stack>
-                            <button onClick={() => likePhoto(picture.id)}>Like{picture.likes}</button>
+                            onClick={() => likePhoto(picture.id)}>Like{picture.likes}</Button></Stack>
+                            {/* <button onClick={() => likePhoto(picture.id)}>Like{picture.likes}</button> */}
                     </CardActions>
                 </CardContent>
             </Card>
