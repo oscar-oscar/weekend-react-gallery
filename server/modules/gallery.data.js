@@ -7,7 +7,7 @@ const galleryItems = [
     { id: 6, title: 'Guthrie Abstract',  description: 'Guthrie Abstract', path: 'images/guthrie.jpg', likes: 0 },
     { id: 7, title: 'Guthrie Color',  description: 'Guthrie Face', path: 'images/guthrie2.jpg', likes: 0 },
     { id: 8, title: 'Clock',  description: 'Union Depot', path: 'images/uniondepot.jpg', likes: 0 },
-    { id: 9, title: 'Weisman',  description: 'Weismann Museum', path: 'images/weisman.jpg', likes: 0 },
+    { id: 9, title: 'Weisman',  description: 'Weisman Museum', path: 'images/weisman.jpg', likes: 0 },
 
 ];
 

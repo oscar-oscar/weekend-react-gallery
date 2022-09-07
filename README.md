@@ -1,9 +1,35 @@
-# Project Name
+# Gallery of My Photos
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+DURATION: 1 WEEK
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+The ultimate goal of this project was to incorporate introductory knowledge of React and Material UI to display meaningful photos.
+
+### Prerequisties
+
+### Installation 
+
+### Usage
+
+### Built With
+
+- Node.js
+- Javascript
+- Express.js
+- React
+- MUI
+
+
+### License
+
+### Stretch Goals
+
+
+
+
+
+
+
+

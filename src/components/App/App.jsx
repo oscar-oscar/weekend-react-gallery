@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
-import GalleryItem from '../GalleryItem/GalleryItem';
+import Header from '../Header/Header';
+import Container from '@mui/material/Container';
+import CardHeader from '@mui/material/CardHeader';
 
 function App() {
 
@@ -43,15 +45,13 @@ function App() {
     });
   };
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="App-title">Gallery of My Photos</h1>
-      </header>
-      <div>
+  return (<div className="App">
+      <Header />
+        <div>
         <GalleryList galleryList={galleryList} likePhoto={likePhoto} />
-
-      </div>
+        </div>
+      
+     
     </div>
   );
 }
